@@ -9,15 +9,14 @@ html{
     scroll-behavior: smooth;
 }
 
-.hero{
-
+body{
     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)) , url(../images/library-with-books.jpg);
     background-position: center;
     background-size: cover;
-    overflow: hidden;
+}
+.hero{
     height: 100vh;
 }
-
  .heading h1{
     color: #ff6347;
     font-size: 55px;
