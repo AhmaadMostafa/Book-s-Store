@@ -57,9 +57,6 @@ form .name:focus , .phone:focus , .email:focus , .Message:focus{
     }
  }
  @media only screen and (max-width: 676px){
-    body{
-        height: 100%;
-    }
     .books{
       width: 100%;
     }
