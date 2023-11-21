@@ -1,6 +1,12 @@
 html{
     scroll-behavior: smooth;
 }
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)) , url(../images/library-with-books.jpg);
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
 
 form{
     display: flex;
@@ -51,6 +57,9 @@ form .name:focus , .phone:focus , .email:focus , .Message:focus{
     }
  }
  @media only screen and (max-width: 676px){
+    body{
+        height: 100%;
+    }
     .books{
       width: 100%;
     }
