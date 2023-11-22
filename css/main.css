@@ -67,7 +67,7 @@ body{
 .content{
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50px);
     text-align: center;
     color: white;

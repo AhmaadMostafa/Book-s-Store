@@ -12,14 +12,56 @@ body {
 html{
   scroll-behavior: smooth;
 }
+.nevbar{
+  width: 85%;
+  margin: auto;
+  padding: 35px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.logo{
+  width: 120px;
+  cursor: pointer;
+}
+.nevbar ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+
+}
+
+.nevbar ul li a{
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
+
+.nevbar ul li::after{
+  content: " ";
+  height: 3px;
+  width: 0;
+  background: #009688;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+@media only screen and (min-width: 992px) {
+ .nevbar ul li:hover::after{
+  width: 100%;
+ }
+}
 .books {
   width: 1200px;
   margin: auto;
   margin: 65px auto;
 }
 footer {
-  background-color: #7D7C7C;
   font-size: 15px;
   padding: 15px 10px;
 }
@@ -123,4 +165,9 @@ footer p{
   .books{
     width: 100%;
   }
+}
+.fhr {
+  width: 40%;
+  margin: 0px auto;
+  border: 1px solid #ff6347;
 }
