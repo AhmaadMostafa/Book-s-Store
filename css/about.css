@@ -107,7 +107,7 @@ body{
     }
 
     .hero-content h2{
-        font-size: 30px;
+        font-size: 24px;
     }
 
     .hero-content p{
@@ -122,6 +122,8 @@ body{
     }
 
     .hero-image{
+        content: url(../images/GettyImages-900301626_437925_t2i3bm\ -\ Copy.jpg);
+        height: auto;
         width: 100%;
     }
  }

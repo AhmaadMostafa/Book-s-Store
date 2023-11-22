@@ -17,11 +17,6 @@ body{
 }
 .banner{
     width: 100%;
-    /* height: 100vh; */
-    /* background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/library-with-books.jpg); */
-    /* background-size: cover;
-    background-position: center;
-    background-repeat: repeat; */
 }
 
 .nevbar{
@@ -63,8 +58,10 @@ body{
     transition: 0.5s;
 }
 
-.nevbar ul li:hover::after{
+@media only screen and (min-width: 992px) {
+   .nevbar ul li:hover::after{
     width: 100%;
+   }
 }
 
 .content{
@@ -101,7 +98,7 @@ body{
         font-size: 15px;
     }
     .nevbar{
-        gap: 70px;
+        gap: 75px;
     }
     .nevbar ul{
         line-height: 1.6;
