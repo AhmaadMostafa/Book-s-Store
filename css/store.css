@@ -1,60 +1,5 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-body {
-  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)) , url(../images/library-with-books.jpg);
-  background-size: cover;
-  background-position: center;
+body{
   height: 100vh;
-}
-html{
-  scroll-behavior: smooth;
-}
-.nevbar{
-  width: 85%;
-  margin: auto;
-  padding: 35px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo{
-  width: 120px;
-  cursor: pointer;
-}
-.nevbar ul li{
-  list-style: none;
-  display: inline-block;
-  margin: 0 20px;
-  position: relative;
-
-}
-
-.nevbar ul li a{
-  text-decoration: none;
-  color: #fff;
-  text-transform: uppercase;
-  font-family: sans-serif;
-}
-
-.nevbar ul li::after{
-  content: " ";
-  height: 3px;
-  width: 0;
-  background: #009688;
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  transition: 0.5s;
-}
-
-@media only screen and (min-width: 992px) {
- .nevbar ul li:hover::after{
-  width: 100%;
- }
 }
 .books {
   width: 1200px;
@@ -170,4 +115,32 @@ footer p{
   width: 40%;
   margin: 0px auto;
   border: 1px solid #ff6347;
+}
+
+.find{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  padding: 10px;
+  gap: -1px;
+}
+
+.find input{
+  border: 1px #ff6347 solid;
+  border-radius: 10px 0px 0px 10px;
+  padding: 10px;
+  outline: none;
+  background-size: contain;
+  background-position: right center;
+  padding-right: 30px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.find button{
+  background-color: #ff6347;
+  border-radius: 0px 10px 10px 0px;
+  padding: 7px;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }

@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -16,7 +16,7 @@ body{
 }
 .hero{
     height: 100vh;
-}
+} */
  .heading h1{
     color: #ff6347;
     font-size: 55px;

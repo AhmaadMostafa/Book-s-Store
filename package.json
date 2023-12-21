@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "json-server": "^0.17.4"
+  },
+  "name": "books-store",
+  "version": "1.0.0",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+  "start": "json-server --watch ./JSON/books.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
