@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="icon" type="image/png" href="../images/images.png"/>
+
+</head>
+<body>
+    <div class="banner">
+        <div class="nevbar">
+            <img src="../images/8.png" alt="" class="logo">
+            <ul>
+                <li><a href="../main.html">Home</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="register.html" class="btnLogin-popup" id="loginBtn">Login</a></li>
+                
+            </ul>
+        </div>
+      </div>
+    <div class="wrapper" class="active">
+        <span class="icon-close"><ion-icon name="close"></ion-icon></span>
+        
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#" id="login-form">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" id="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" id="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                    <a href="#" id="forgotPassword">Forgot Password</a>
+                </div>
+                <button type="button" class="btn" id="login">Login</button>
+                <div id="loginMessage"></div>
+                <div class="login-register">
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Registration</h2>
+            <form action="#" id="register-form">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></span>
+                    <input type="text" id="username" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                    <input type="email" id="register-email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" id="register-password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox" id="agree">I agree to the terms & conditions</label>
+        
+                </div>
+                <button type="button" class="btn" id="register">Register</button>
+                <div class="login-register">
+                    <div id="registrationMessage"></div>
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+
+        
+<script type="module">
+    
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    import {  signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    import {  sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+  
+    const firebaseConfig = {
+      apiKey: "AIzaSyCeGbIG9h6retRzNPOfLw_84Mxd-dcVI2I",
+      authDomain: "login-with-fire-base-e68f8.firebaseapp.com",
+      databaseURL: "https://login-with-fire-base-e68f8-default-rtdb.firebaseio.com",
+      projectId: "login-with-fire-base-e68f8",
+      storageBucket: "login-with-fire-base-e68f8.appspot.com",
+      messagingSenderId: "844899129460",
+      appId: "1:844899129460:web:49bb8dd806e9bf6eea1921",
+      measurementId: "G-C7FF589263"
+    };
+  
+  
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  
+      const auth = getAuth();
+      
+      document.getElementById("register").addEventListener("click",function(){
+      // var username = document.getElementById('username').value;
+      var email = document.getElementById('register-email').value;
+      var password = document.getElementById('register-password').value;
+      var agreeCheckbox = document.getElementById('agree');
+  
+      if (!agreeCheckbox.checked) {
+          alert("Please agree to the terms & conditions.");
+          return;
+      }
+  
+      
+      createUserWithEmailAndPassword(auth,email, password)
+          .then((userCredential) =>{
+              
+              var user = userCredential.user;
+              console.log('User registered:', user);
+  
+              updateRegistrationMessage("Account created successfully!", true);
+          })
+          .catch(function(error) {
+              var errorCode = error.code;
+              var errorMessage = error.message;
+              console.error('Registration error:', errorCode, errorMessage);
+              updateRegistrationMessage("Registration failed. ", false);
+          });
+      });
+  
+      
+      document.getElementById("login").addEventListener("click",function(){
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+        
+
+
+      signInWithEmailAndPassword(auth,email, password)
+        .then(function(userCredential) {
+          
+          var user = userCredential.user;
+          console.log('User logged in:', user);
+          updateLoginMessage("Login successful!", true);
+        })
+        .catch(function(error) {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.error('Login error:', errorCode, errorMessage);
+         
+          updateLoginMessage("Wrong Email or Password", false);
+        });
+  });
+
+
+
+  
+  
+  document.getElementById("forgotPassword").addEventListener("click",function(){
+      var email =document.getElementById('email').value;
+      if (email !== null && email !== "") {
+  
+          sendPasswordResetEmail(auth,email)
+              .then(function () {
+                  
+                  alert("Password reset email sent. Check your inbox.");
+              })
+              .catch(function (error) {
+                  
+                  console.error('Password reset error:', error.code, error.message);
+                  alert("Password reset failed. ");
+              });
+      }
+  });
+
+
+//   function updateLoginButton() {
+//     const loginButton = document.getElementById('loginBtn');
+//     const user = auth.currentUser;
+
+//     auth.onAuthStateChanged(function (user) {
+//         if (user) {
+//             loginButton.innerText = "Sign Out";
+//             loginButton.onclick = function () {
+//                 auth.signOut().then(function () {
+//                     console.log('User signed out');
+//                     window.location.href = "main.html";
+//                 }).catch(function (error) {
+//                     console.error('Sign out error:', error);
+//                 });
+//             };
+//         } else {
+//             loginButton.innerText = "Login";
+//             loginButton.onclick = function () {
+//                 var email = document.getElementById('email').value;
+//                 var password = document.getElementById('password').value;
+
+//                 signInWithEmailAndPassword(auth, email, password)
+//                     .then(function (userCredential) {
+//                         var user = userCredential.user;
+//                         console.log('User logged in:', user);
+//                         updateLoginMessage("Login successful!", true);
+//                     })
+//                     .catch(function (error) {
+//                         var errorCode = error.code;
+//                         var errorMessage = error.message;
+//                         console.error('Login error:', errorCode, errorMessage);
+//                         updateLoginMessage("Wrong Email or Password", false);
+//                     });
+//             };
+//         }
+//     });
+// }
+
+// updateLoginButton();
+
+  
+  </script>
+  
+
+        <script src="../script.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</div>
+</body>
+</html>

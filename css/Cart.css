@@ -1,0 +1,48 @@
+.hero {
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.heading h1 {
+  color: #ff6347;
+  font-size: 55px;
+  text-align: center;
+  margin-top: 100px;
+}
+.btns {
+  margin: 10px 17%;
+}
+button {
+  width: 400px;
+  height: 50px;
+  cursor: pointer;
+  background: none;
+  border: 2px solid #ff6347;
+  color: white;
+  font-size: 25px;
+  padding: 10px 0px;
+  margin: 10px 5%;
+}
+button:hover {
+  background-color: #ff6347;
+  transition: 0.5s;
+}
+button:active {
+  opacity: 0.3;
+}
+footer {
+  font-size: 15px;
+  padding: 15px 10px;
+}
+footer p{
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+}
+.fhr {
+  width: 40%;
+  margin: 0px auto;
+  border: 1px solid #ff6347;
+}

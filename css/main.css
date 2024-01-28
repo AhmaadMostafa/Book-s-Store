@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: "Arial" , sans-serif; */
+    
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../images/library-with-books.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    
+}
+.banner{
+    width: 100%;
+}
+
+.nevbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+
+.nevbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.nevbar ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.nevbar ul li::after{
+    content: " ";
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+@media only screen and (min-width: 992px) {
+   .nevbar ul li:hover::after{
+    width: 100%;
+   }
+}

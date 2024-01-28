@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1.0, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/CheckOut.css" />
+    <link rel="icon" type="image/png" href="../images/images.png" />
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&family=Hanken+Grotesk:wght@500;700;800&family=Work+Sans:wght@200;300;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&family=Hanken+Grotesk:wght@500;700;800&family=Montserrat:ital,wght@0,700;1,700&family=Work+Sans:wght@200;300;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>CheckOut</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <header>
+        <div class="banner">
+          <div class="nevbar">
+              <img src="../images/8.png" alt="" class="logo">
+              <ul>
+                <li><a href="../main.html">Home</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="register.html">Login</a></li>
+                <li><a href="Cart.html"><img class="ci" src="../images/icon-cart.svg" height="20px" alt=""></a></li>
+              </ul>
+          </div>
+      </div>
+        <section class="hero">
+          <div class="heading"><h1>CheckOut</h1></div>
+        </section>
+      </header>
+      <section class="payMethod">
+        <div class="MC" id="MC">
+          <img src="../images/mastercard-logo.jpg" alt="" />
+          <p class="Mtitle" id="Mtitle">MasterCard</p>
+          <p class="Mdis">15% Discount</p>
+        </div>
+        <div class="cash" id="cash">
+          <p class="Ctitle" id="Ctitle">Cash</p>
+        </div>
+        <form action="" id="Form">
+          <p>Cardholder Name:</p>
+          <input type="text" placeholder="" id="hName" />
+          <br /><br />
+          <p>Card Number:</p>
+          <input type="number" placeholder="" id="Cnumber" />
+          <br /><br />
+          <p>End Date: <span class="CVV">CVV</span></p>
+          <input type="number" placeholder="mm" id="ED" max="12" maxlength="2" />
+          <input type="number" placeholder="yyy" id="ED" maxlength="4" />
+          <input type="number" placeholder="3 Digits" id="CVV" />
+          <br /><br />
+          <input type="checkbox" id="" />
+          <span
+            >I have read and accept the terms of use rules of privacy policy</span
+          >
+          <br />
+          <button id="OB">Order</button>
+        </form>
+        <div class="break"></div>
+        <div id="CO">
+          <input type="checkbox" id=""/>
+          <span
+            >I have read and accept the terms of use rules of privacy policy</span
+          >
+          <br />
+          <br>
+          <button id="OB2">Order</button>
+        </div>
+      </section>
+      <section class="foot">
+        <hr class="fhr">
+        <footer>
+          <p>&copy; Our BookStore Company 2023</p>
+        </footer>
+      </section>
+    </div>
+    
+    <script src="../CheckOut.js"></script>
+  </body>
+</html>
